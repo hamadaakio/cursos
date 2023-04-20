@@ -1,0 +1,39 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <strong>{{ titleNgIf }}</strong>
+      </mat-panel-title>
+
+      <mat-panel-description>
+        O Hidden serve para ocultar ou não um elemento que desejamos mostrar, ou
+        não. rsrsrsrs
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p><b>Hidden</b></p>
+    <p [hidden]="mostrarOuNao">Mostrando ou não!</p>
+    <p [hidden]="!mostrarOuNao">Mostrando ou não igual o ngIf!</p>
+    <p><b>ngIf</b></p>
+    <p *ngIf="mostrarOuNao">Condição com o ngIf mostrarOuNao</p>
+    <p *ngIf="umNumero > 23">Condição com outro ngIf</p>
+    <p *ngIf="umArray.length > 0">
+      Verificando se o valor do array é maior que Zero
+    </p>
+    <p *ngIf="umArray.length > 0 && mostrarOuNao">
+      Mostramos essa mensagem caso eu tenha algo no array e a condição
+      mostrarOuNao seja verdade!
+    </p>
+    <p *ngIf="umArray.length > 0 && mostrarOuNao; else nao">
+      Verificando duas condições! Verdade!
+    </p>
+
+    <ng-template #nao>
+      <p>
+        Verifiquei as duas condições e uma delas (ou ambas) é (são) falsa(s).
+      </p>
+    </ng-template>
+    <button mat-raised-button color="primary" (click)="alterar()">
+      Alterar dados
+    </button>
+  </mat-expansion-panel>
+</mat-accordion>

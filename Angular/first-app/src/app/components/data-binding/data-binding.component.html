@@ -1,0 +1,114 @@
+<section id="principal" l>
+  <h1>Data Binding</h1>
+  <section id="conteudo">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Interpolação</mat-panel-title>
+          <mat-panel-description>
+            Obtendo informações do .ts e usando expressões matemáticas no .html
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <h4><b>Recuperando as informações do arquivo .ts</b></h4>
+        <p>
+          Esse título vem do .ts - <b>{{ title }}</b>
+        </p>
+        <br />
+        <h4>
+          <b
+            >E também podemos fazer operações matemáticas dentro da
+            interpolação</b
+          >
+        </h4>
+        <p>
+          A soma de 10 + 10 = <b>{{ 10 + 10 }}</b>
+        </p>
+        <p>
+          A subtração de 10 - 10 = <b>{{ 10 - 10 }}</b>
+        </p>
+        <br />
+        <h4><b>Retornando um texto a partir de uma função</b></h4>
+        <p>
+          <i>{{ retornaTexto() }}</i>
+        </p>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Property Binding</mat-panel-title>
+          <mat-panel-description>
+            Trabalhar com as propriedades dos meus elementos.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <h4>
+          <b>Propriedade de Imagem - FORMA NÃO TÃO LEGAL</b>
+          <br />
+          <img src="{{ urlImagem }}" />
+        </h4>
+        <h4>
+          <b>Propriedade de Imagem - FORMA LEGAL</b>
+          <br />
+          <img [src]="urlImagem" />
+        </h4>
+        <br />
+        <mat-form-field>
+          <mat-label>Entre com a informação</mat-label>
+          <input matInput [value]="valorInput" />
+        </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Event Binding</mat-panel-title>
+          <mat-panel-description>
+            Trabalhar com os eventos gerados a partir de alguma ação.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <button (click)="emiteAlerta()">Clique aqui</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Two Way Data Binding</mat-panel-title>
+          <mat-panel-description>
+            Forma de atualizar ambos os arquivos.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <br />
+        <mat-form-field>
+          <mat-label>Forma não tão legal</mat-label>
+          <input
+            matInput
+            #twoWay1
+            [value]="valorTwoWay"
+            (input)="valorTwoWay = twoWay1.value"
+          />
+        </mat-form-field>
+        <br />
+
+        <p>
+          o texto digitado pelo usuário no input foi:
+          <b> {{ valorTwoWay }} </b>
+        </p>
+
+        <br>
+        <mat-form-field>
+          <mat-label>Forma legal</mat-label>  
+        <input matInput [(ngModel)]="valorTwoWay2">
+      </mat-form-field>
+      <br>
+      <p>
+        o texto digitado pelo usuário no input foi:
+        <b> {{ valorTwoWay2 }} </b>
+      </p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </section>
+</section>

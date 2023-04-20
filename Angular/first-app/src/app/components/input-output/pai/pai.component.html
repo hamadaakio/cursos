@@ -1,0 +1,29 @@
+<section class="principal">
+  <h1>Input e Output - Componente Pai</h1>
+  <section class="conteudo">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <b>{{ tituloHeader }}</b>
+          </mat-panel-title>
+
+          <mat-panel-description>
+            {{ tituloDescription }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <article class="articles">
+          <mat-form-field>
+            <mat-label>Digite o título para o componente filho:</mat-label>
+            <input matInput [(ngModel)]="tituloFilho" />
+          </mat-form-field>
+          <br />
+          <app-filho [titulo]="tituloFilho"
+            (dadoEnviado)="receberDados($event)">
+          </app-filho>
+        </article>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </section>
+</section>

@@ -1,0 +1,35 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{ titleNgFor }}</mat-panel-title>
+      <mat-panel-description>
+        nfFor serve para fazermos iterações com elementos do nosso .ts para
+        exibir vários dados.
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <article class="articles">
+      <p><b>Array Simples</b></p>
+      <ul>
+        <li *ngFor="let time of times">
+          Entrou no Campeonato: <b>{{ time }}</b>
+        </li>
+      </ul>
+    </article>
+
+    <article class="articles">
+      <p><b>Array Composto</b></p>
+      <div *ngFor="let usuario of usuarios">
+        <p>
+          Login: <b>{{ usuario.login }}</b>
+        </p>
+        <p>
+          Senha: <b>{{ usuario.senha }}</b>
+        </p>
+        <p>
+          E-mail: <b>{{ usuario.email }}</b>
+        </p>
+      </div>
+    </article>
+  </mat-expansion-panel>
+</mat-accordion>

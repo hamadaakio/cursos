@@ -1,0 +1,28 @@
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+  
+        <mat-panel-title>
+          <strong>{{ titlengSwitch }}</strong>
+        </mat-panel-title>
+  
+        <mat-panel-description>
+          Com o Switch podemos escolher o que queremos mostrar com base na opção indicada.
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <nav class="botao">
+        <button mat-raised-button (click)="selecionar(0)">Caso 0</button>
+        <button mat-raised-button color="primary" (click)="selecionar(1)">Caso 1</button>
+        <button mat-raised-button color="accent" (click)="selecionar(2)">Caso 2</button>
+        <button mat-raised-button color="warn" (click)="selecionar(3)">Caso 3</button>
+      </nav>
+  
+      <ng-container [ngSwitch]="condicional" style="margin-top: 20px;">
+        <strong>
+          <p *ngSwitchDefault="0">Você selecionou o item default, ou seja, Caso 0</p>
+          <p *ngSwitchCase="1" >Você selecionou o primeiro item, ou seja, Caso 1</p>
+          <p *ngSwitchCase="2">Você selecionou o segundo item, ou seja, Caso 2</p>
+          <p *ngSwitchCase="3">Você selecionou o terceiro item, ou seja, Caso 3</p>
+        </strong>
+      </ng-container>
