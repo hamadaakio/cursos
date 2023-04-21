@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+
+    <link rel="stylesheet" href="form.css" type="text/css">
+</head>
+
+<body>
+    <h2>Formulário</h2>
+
+    <form>
+
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+
+            <p>Campos com * são obrigatórios</p>
+            <label for="inputNome">Nome*:</label><br>
+            <input type="text" id="inputNome" required>
+            <br>
+            <br>
+
+            <label for="inputEmail">E-mail*:</label><br>
+            <input type="email" id="inputEmail" required>
+            <br>
+            <br>
+
+            <label for="inputSenha">Senha*:</label><br>
+            <input type="password" id="inputSenha" required >
+            <br>
+            <br>
+
+            <label for="sexo">Sexo:</label><br>
+            <input list="sexo">
+            <datalist id="sexo">
+                <option value="Masculino"></option>
+                <option value="Feminino"></option>
+                <option value="Outros"></option>
+            </datalist>
+            <br>
+            <br>
+
+            <label for="dataDeNascimento">Data de Nascimento:</label><br>
+            <input type="date">
+            <br>
+            <br>
+
+            <input type="checkbox" id="termosAceitos">
+            <label for="termosAceitos">Eu li e aceito os termos da plataforma</label>
+            <br>
+            <br>
+
+            <input type="reset">
+
+            <input type="submit" value="Acessar">
+
+        </fieldset>
+
+    </form>
+
+
+</body>
+
+</html>

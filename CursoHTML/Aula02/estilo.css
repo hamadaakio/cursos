@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    color: #ccc;
+}
+
+/* Comentario */
+
+.pCustomizado {
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+#pDiferenciado {
+    color: red;
+    font-weight: 500;
+}
+
+.linkCustom {
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #323232;
+    color: #ccc;
+    border: 2px solid #ccc;
+    padding: 10px 30px;
+    border-radius: 500px;
+    box-shadow: 20px 20px 30px black;
+}
+
+.linkCustom:hover {
+    color: #000;
+    background:  white;
+    border: 2px;
+}
+
+.imagemCustom {
+    width: 50%;
+    border-radius: 30px;
+    box-shadow: 20px 20px 30px black;
+}
